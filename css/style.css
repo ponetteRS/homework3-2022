@@ -30,9 +30,19 @@ nav{
   text-align: left;   
 }
 
-nav a{
-  color: black;
-  font-weight: bold;
+nav a{	
+  color: black;	
+  font-weight: bold;	
+  text-decoration: none;	
+}	
+nav a:hover{	
+  /* text-decoration: wavy; */
+  text-decoration-line: underline;	
+  text-decoration-style: wavy;	
+  /* note to use Safari over chrome */
+}	
+nav a:focus{	
+  border-top: solid 2px yellow;	
 }
 
 nav ul{
@@ -55,6 +65,8 @@ header p{
   background-color: rgba(255, 255, 255, .8);
   border: 10px solid black;
   padding: 30px;
+  text-align: center;	
+  max-height: 25vh;
 }
 
 footer{
@@ -83,6 +95,8 @@ a.skip{
   transition: left 1s ease-out;
   z-index: 1;
   /* Requirement 3 code here*/
+  position: relative;
+  left: -500px;
   
 }
 
@@ -92,10 +106,21 @@ a.skip{
 
 .container{
   /* Requirement 5 code here*/
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  row-gap: 30px;
 
 }
 
 /* Requirements 6-10 here: */
+.intro{
+  min-height: 400px;
+  background-color: #858585;
+  /* background-image: url("/Users/ponetterubio/Documents/GitHub/HW3-2022/images/header.jpg");  */
+  /* background-image: url("images/header.jpg");  */
+  /* above not sure which path to take, the scrolly thingy not working */
+  
+}
 
 
 
@@ -116,8 +141,18 @@ a.skip{
 
 }
 
+.about, .clients, .method, .contact{
+  grid-column: 2;
+}
 
+img{
+width: 100%;
+}
 
+.clients-image, .contact-image, .about-image, .method-image{
+  grid-column: 1 / span 3;
+  min-height: 500px;
+}
 
 
 
